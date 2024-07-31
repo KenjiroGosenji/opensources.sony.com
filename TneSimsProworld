@@ -1,0 +1,51 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Welcome to The Sims Pro World!");
+
+        // Get user account information
+        string username = GetUserAccountInfo();
+
+        // Pull real estate data from Realtor Inc and Zillow
+        string location = GetRealEstateLocation();
+
+        // Calculate money based on user gameplay
+        int moneyEarned = CalculateMoneyEarned(username);
+
+        // Buy and remodel house based on user preferences
+        BuyAndRemodelHouse(username, location, moneyEarned);
+
+        Console.WriteLine("Enjoy playing The Sims Pro World!");
+    }
+
+    static string GetUserAccountInfo()
+    {
+        Console.WriteLine("Enter your username: ");
+        return Console.ReadLine();
+    }
+
+    static string GetRealEstateLocation()
+    {
+        // Pull location data from Realtor Inc or Zillow
+        Console.WriteLine("Enter a real estate location: ");
+        return Console.ReadLine();
+    }
+
+    static int CalculateMoneyEarned(string username)
+    {
+        // Calculate money earned based on user gameplay
+        // For simplicity, let's just use a random number
+        Random random = new Random();
+        return random.Next(1000, 5000);
+    }
+
+    static void BuyAndRemodelHouse(string username, string location, int money)
+    {
+        // Buy and remodel house based on user preferences
+        Console.WriteLine($"{username} bought a house in {location} with ${money}.");
+        Console.WriteLine($"{username} is now remodeling the house just like in The Sims games.");
+    }
+}
